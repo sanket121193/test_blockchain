@@ -1,0 +1,45 @@
+=============== Apr 6, 2020 (UTC) ===============
+13:50:20.140915 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:50:20.428306 db@open opening
+13:50:20.437893 version@stat F·[] S·0B[] Sc·[]
+13:50:20.830629 db@janitor F·2 G·0
+13:50:20.833481 db@open done T·405.077522ms
+=============== Apr 6, 2020 (UTC) ===============
+14:06:04.969467 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:06:04.969827 version@stat F·[] S·0B[] Sc·[]
+14:06:04.969853 db@open opening
+14:06:04.969974 journal@recovery F·1
+14:06:04.970650 journal@recovery recovering @1
+14:06:04.971063 version@stat F·[] S·0B[] Sc·[]
+14:06:05.261147 db@janitor F·2 G·0
+14:06:05.261246 db@open done T·291.364554ms
+=============== Apr 7, 2020 (UTC) ===============
+04:04:08.224449 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+04:04:08.573588 version@stat F·[] S·0B[] Sc·[]
+04:04:08.573715 db@open opening
+04:04:08.573980 journal@recovery F·1
+04:04:08.581208 journal@recovery recovering @2
+04:04:09.203357 memdb@flush created L0@4 N·4 S·158B "pri..l\x00\x00,d4":"pri..l\x00\a,d1"
+04:04:09.215089 version@stat F·[1] S·158B[158B] Sc·[0.25]
+04:04:10.091541 db@janitor F·3 G·0
+04:04:10.091589 db@open done T·1.517843297s
+=============== Apr 7, 2020 (UTC) ===============
+08:26:15.074020 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+08:26:15.158347 version@stat F·[1] S·158B[158B] Sc·[0.25]
+08:26:15.158464 db@open opening
+08:26:15.158749 journal@recovery F·1
+08:26:15.166233 journal@recovery recovering @5
+08:26:15.317649 memdb@flush created L0@7 N·1 S·129B "pri..l\x00\a,d6":"pri..l\x00\a,d6"
+08:26:15.318905 version@stat F·[2] S·287B[287B] Sc·[0.50]
+08:26:15.706272 db@janitor F·4 G·0
+08:26:15.706340 db@open done T·547.834695ms
+=============== Apr 8, 2020 (UTC) ===============
+13:47:03.932916 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:47:04.066971 version@stat F·[2] S·287B[287B] Sc·[0.50]
+13:47:04.067013 db@open opening
+13:47:04.067494 journal@recovery F·1
+13:47:04.071751 journal@recovery recovering @8
+13:47:04.309031 memdb@flush created L0@10 N·1 S·129B "pri..l\x00\a,d8":"pri..l\x00\a,d8"
+13:47:04.321471 version@stat F·[3] S·416B[416B] Sc·[0.75]
+13:47:04.753459 db@janitor F·5 G·0
+13:47:04.753515 db@open done T·686.486377ms

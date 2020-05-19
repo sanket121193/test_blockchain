@@ -1,0 +1,391 @@
+version: '2.0'
+services:
+    ca.AdminTeam.prime.com:
+        image: 'hyperledger/fabric-ca:1.4.3'
+        environment:
+            - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+            - FABRIC_CA_SERVER_CA_NAME=ca-AdminTeam
+            - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.AdminTeam.prime.com-cert.pem
+            - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/bcd4c25817cbbc5ca3aaa59c292c783f8ea21d9cb5463a25001e9562ef6767e8_sk
+            - FABRIC_CA_SERVER_TLS_ENABLED=true
+            - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.AdminTeam.prime.com-cert.pem
+            - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/bcd4c25817cbbc5ca3aaa59c292c783f8ea21d9cb5463a25001e9562ef6767e8_sk
+        ports:
+            - '7054:7054'
+        command: 'sh -c ''fabric-ca-server start -b admin:adminpw -d'''
+        volumes:
+            - './channel/crypto-config/peerOrganizations/AdminTeam.prime.com/ca/:/etc/hyperledger/fabric-ca-server-config'
+        container_name: ca_peerAdminTeam
+    ca.Employer.prime.com:
+        image: 'hyperledger/fabric-ca:1.4.3'
+        environment:
+            - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+            - FABRIC_CA_SERVER_CA_NAME=ca-Employer
+            - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.Employer.prime.com-cert.pem
+            - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/b50de919fc4a2f59afb71c39adf5a092eef74d5fddaec0d9e9c2c0b7bf4a45d6_sk
+            - FABRIC_CA_SERVER_TLS_ENABLED=true
+            - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.Employer.prime.com-cert.pem
+            - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/b50de919fc4a2f59afb71c39adf5a092eef74d5fddaec0d9e9c2c0b7bf4a45d6_sk
+        ports:
+            - '7154:7054'
+        command: 'sh -c ''fabric-ca-server start -b admin:adminpw -d'''
+        volumes:
+            - './channel/crypto-config/peerOrganizations/Employer.prime.com/ca/:/etc/hyperledger/fabric-ca-server-config'
+        container_name: ca_peerEmployer
+    ca.University.prime.com:
+        image: 'hyperledger/fabric-ca:1.4.3'
+        environment:
+            - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+            - FABRIC_CA_SERVER_CA_NAME=ca-University
+            - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.University.prime.com-cert.pem
+            - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/3b36744946bbb12d891a080155c813c9fe35ed23ddb12a466a175ce2e5a49deb_sk
+            - FABRIC_CA_SERVER_TLS_ENABLED=true
+            - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.University.prime.com-cert.pem
+            - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/3b36744946bbb12d891a080155c813c9fe35ed23ddb12a466a175ce2e5a49deb_sk
+        ports:
+            - '7254:7054'
+        command: 'sh -c ''fabric-ca-server start -b admin:adminpw -d'''
+        volumes:
+            - './channel/crypto-config/peerOrganizations/University.prime.com/ca/:/etc/hyperledger/fabric-ca-server-config'
+        container_name: ca_peerUniversity
+    ca.Student.prime.com:
+        image: 'hyperledger/fabric-ca:1.4.3'
+        environment:
+            - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+            - FABRIC_CA_SERVER_CA_NAME=ca-Student
+            - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.Student.prime.com-cert.pem
+            - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/5fde079a9949ade5c4f81e8ac374cebf8e2bf4556a4144d416c1475bc884fd55_sk
+            - FABRIC_CA_SERVER_TLS_ENABLED=true
+            - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.Student.prime.com-cert.pem
+            - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/5fde079a9949ade5c4f81e8ac374cebf8e2bf4556a4144d416c1475bc884fd55_sk
+        ports:
+            - '7354:7054'
+        command: 'sh -c ''fabric-ca-server start -b admin:adminpw -d'''
+        volumes:
+            - './channel/crypto-config/peerOrganizations/Student.prime.com/ca/:/etc/hyperledger/fabric-ca-server-config'
+        container_name: ca_peerStudent
+    orderer.prime.com:
+        container_name: orderer.prime.com
+        image: 'hyperledger/fabric-orderer:1.4.3'
+        environment:
+            - ORDERER_GENERAL_LOGLEVEL=debug
+            - FABRIC_LOGGING_SPEC=INFO
+            - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+            - ORDERER_GENERAL_LISTENPORT=7050
+            - ORDERER_GENERAL_GENESISMETHOD=file
+            - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/genesis.block
+            - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+            - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/crypto/orderer/msp
+            - ORDERER_GENERAL_TLS_ENABLED=true
+            - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt           
+            - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerEmployer/tls/ca.crt, /etc/hyperledger/crypto/peerUniversity/tls/ca.crt,/etc/hyperledger/crypto/peerStudent/tls/ca.crt]
+        working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
+        command: orderer
+        ports:
+            - '7050:7050'
+        volumes:
+            - './channel:/etc/hyperledger/configtx'
+            - './channel/crypto-config/ordererOrganizations/prime.com/orderers/orderer.prime.com/:/etc/hyperledger/crypto/orderer'
+            - './channel/crypto-config/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/:/etc/hyperledger/crypto/peerAdminTeam'
+            - './channel/crypto-config/peerOrganizations/Employer.prime.com/peers/peer0.Employer.prime.com/:/etc/hyperledger/crypto/peerEmployer'
+            - './channel/crypto-config/peerOrganizations/University.prime.com/peers/peer0.University.prime.com/:/etc/hyperledger/crypto/peerUniversity'
+            - './channel/crypto-config/peerOrganizations/Student.prime.com/peers/peer0.Student.prime.com/:/etc/hyperledger/crypto/peerStudent'
+            - './orderer.prime.com:/var/hyperledger/production/orderer'
+
+    orderer1.prime.com:
+        container_name: orderer1.prime.com
+        image: 'hyperledger/fabric-orderer:1.4.3'
+        environment:
+            - ORDERER_GENERAL_LOGLEVEL=debug
+            - FABRIC_LOGGING_SPEC=INFO
+            - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+            - ORDERER_GENERAL_LISTENPORT=7050
+            - ORDERER_GENERAL_GENESISMETHOD=file
+            - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/genesis.block
+            - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+            - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/crypto/orderer/msp
+            - ORDERER_GENERAL_TLS_ENABLED=true
+            - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerEmployer/tls/ca.crt, /etc/hyperledger/crypto/peerUniversity/tls/ca.crt,/etc/hyperledger/crypto/peerStudent/tls/ca.crt]          
+        working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
+        command: orderer
+        ports:
+            - '8050:7050'
+        volumes:
+            - './channel:/etc/hyperledger/configtx'
+            - './channel/crypto-config/ordererOrganizations/prime.com/orderers/orderer1.prime.com/:/etc/hyperledger/crypto/orderer'
+            - './channel/crypto-config/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/:/etc/hyperledger/crypto/peerAdminTeam'
+            - './channel/crypto-config/peerOrganizations/Employer.prime.com/peers/peer0.Employer.prime.com/:/etc/hyperledger/crypto/peerEmployer'
+            - './channel/crypto-config/peerOrganizations/University.prime.com/peers/peer0.University.prime.com/:/etc/hyperledger/crypto/peerUniversity'
+            - './channel/crypto-config/peerOrganizations/Student.prime.com/peers/peer0.Student.prime.com/:/etc/hyperledger/crypto/peerStudent'
+            - './orderer1.prime.com:/var/hyperledger/production/orderer'
+
+    orderer2.prime.com:
+        container_name: orderer2.prime.com
+        image: 'hyperledger/fabric-orderer:1.4.3'
+        environment:
+            - ORDERER_GENERAL_LOGLEVEL=debug
+            - FABRIC_LOGGING_SPEC=INFO
+            - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+            - ORDERER_GENERAL_LISTENPORT=7050
+            - ORDERER_GENERAL_GENESISMETHOD=file
+            - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/genesis.block
+            - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+            - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/crypto/orderer/msp
+            - ORDERER_GENERAL_TLS_ENABLED=true
+            - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerEmployer/tls/ca.crt, /etc/hyperledger/crypto/peerUniversity/tls/ca.crt,/etc/hyperledger/crypto/peerStudent/tls/ca.crt] 
+        working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
+        command: orderer
+        ports:
+            - '9050:7050'
+        volumes:
+            - './channel:/etc/hyperledger/configtx'
+            - './channel/crypto-config/ordererOrganizations/prime.com/orderers/orderer2.prime.com/:/etc/hyperledger/crypto/orderer'
+            - './channel/crypto-config/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/:/etc/hyperledger/crypto/peerAdminTeam'
+            - './channel/crypto-config/peerOrganizations/Employer.prime.com/peers/peer0.Employer.prime.com/:/etc/hyperledger/crypto/peerEmployer'
+            - './channel/crypto-config/peerOrganizations/University.prime.com/peers/peer0.University.prime.com/:/etc/hyperledger/crypto/peerUniversity'
+            - './channel/crypto-config/peerOrganizations/Student.prime.com/peers/peer0.Student.prime.com/:/etc/hyperledger/crypto/peerStudent'
+            - './orderer2.prime.com:/var/hyperledger/production/orderer'
+            
+    orderer3.prime.com:
+        container_name: orderer3.prime.com
+        image: 'hyperledger/fabric-orderer:1.4.3'
+        environment:
+            - ORDERER_GENERAL_LOGLEVEL=debug
+            - FABRIC_LOGGING_SPEC=INFO
+            - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+            - ORDERER_GENERAL_LISTENPORT=7050
+            - ORDERER_GENERAL_GENESISMETHOD=file
+            - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/genesis.block
+            - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+            - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/crypto/orderer/msp
+            - ORDERER_GENERAL_TLS_ENABLED=true
+            - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerEmployer/tls/ca.crt, /etc/hyperledger/crypto/peerUniversity/tls/ca.crt,/etc/hyperledger/crypto/peerStudent/tls/ca.crt]
+        working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
+        command: orderer
+        ports:
+            - '10050:7050'
+        volumes:
+            - './channel:/etc/hyperledger/configtx'
+            - './channel/crypto-config/ordererOrganizations/prime.com/orderers/orderer3.prime.com/:/etc/hyperledger/crypto/orderer'
+            - './channel/crypto-config/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/:/etc/hyperledger/crypto/peerAdminTeam'
+            - './channel/crypto-config/peerOrganizations/Employer.prime.com/peers/peer0.Employer.prime.com/:/etc/hyperledger/crypto/peerEmployer'
+            - './channel/crypto-config/peerOrganizations/University.prime.com/peers/peer0.University.prime.com/:/etc/hyperledger/crypto/peerUniversity'
+            - './channel/crypto-config/peerOrganizations/Student.prime.com/peers/peer0.Student.prime.com/:/etc/hyperledger/crypto/peerStudent'
+            - './orderer3.prime.com:/var/hyperledger/production/orderer'
+
+    orderer4.prime.com:
+        container_name: orderer4.prime.com
+        image: 'hyperledger/fabric-orderer:1.4.3'
+        environment:
+            - ORDERER_GENERAL_LOGLEVEL=debug
+            - FABRIC_LOGGING_SPEC=INFO
+            - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+            - ORDERER_GENERAL_LISTENPORT=7050
+            - ORDERER_GENERAL_GENESISMETHOD=file
+            - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/genesis.block
+            - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+            - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/crypto/orderer/msp
+            - ORDERER_GENERAL_TLS_ENABLED=true
+            - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
+            - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerEmployer/tls/ca.crt, /etc/hyperledger/crypto/peerUniversity/tls/ca.crt,/etc/hyperledger/crypto/peerStudent/tls/ca.crt]
+        working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
+        command: orderer
+        ports:
+            - '11050:7050'
+        volumes:
+            - './channel:/etc/hyperledger/configtx'
+            - './channel/crypto-config/ordererOrganizations/prime.com/orderers/orderer4.prime.com/:/etc/hyperledger/crypto/orderer'
+            - './channel/crypto-config/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/:/etc/hyperledger/crypto/peerAdminTeam'
+            - './channel/crypto-config/peerOrganizations/Employer.prime.com/peers/peer0.Employer.prime.com/:/etc/hyperledger/crypto/peerEmployer'
+            - './channel/crypto-config/peerOrganizations/University.prime.com/peers/peer0.University.prime.com/:/etc/hyperledger/crypto/peerUniversity'
+            - './channel/crypto-config/peerOrganizations/Student.prime.com/peers/peer0.Student.prime.com/:/etc/hyperledger/crypto/peerStudent'
+            - './orderer4.prime.com:/var/hyperledger/production/orderer'
+
+
+    couchdb.peer0.AdminTeam:
+        container_name: couchdb.peer0.AdminTeam
+        image: 'hyperledger/fabric-couchdb:0.4.18'
+        environment:
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=admin
+        ports:
+            - '13050:5984'
+    peer0.AdminTeam.prime.com:
+        container_name: peer0.AdminTeam.prime.com
+        extends:
+            file: base.yaml
+            service: peer-base
+        environment:
+            - CORE_PEER_ID=peer0.AdminTeam.prime.com
+            - CORE_PEER_LOCALMSPID=AdminTeamMSP
+            - CORE_PEER_ADDRESS=peer0.AdminTeam.prime.com:7051
+            - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
+            - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
+            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.AdminTeam:5984
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
+            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.AdminTeam.prime.com:7051            
+        ports:
+            - '7051:7051'
+            - '7053:7053'
+        volumes:
+            - './channel/crypto-config/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/:/etc/hyperledger/crypto/peer'
+            - './peer0.AdminTeam.prime.com:/var/hyperledger/production'
+        depends_on:
+            - couchdb.peer0.AdminTeam
+            - orderer.prime.com
+
+    couchdb.peer0.Employer:
+        container_name: couchdb.peer0.Employer
+        image: 'hyperledger/fabric-couchdb:0.4.18'
+        environment:
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=admin
+        ports:
+            - '20050:5984'
+    peer0.Employer.prime.com:
+        container_name: peer0.Employer.prime.com
+        extends:
+            file: base.yaml
+            service: peer-base
+        environment:
+            - CORE_PEER_ID=peer0.Employer.prime.com
+            - CORE_PEER_LOCALMSPID=EmployerMSP
+            - CORE_PEER_ADDRESS=peer0.Employer.prime.com:7056
+            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.Employer:5984
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
+            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.Employer.prime.com:7056
+            - CORE_PEER_LISTENADDRESS=0.0.0.0:7056  
+            - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7057
+        ports:
+            - '7056:7056'
+            - '7058:7058'
+        volumes:
+            - ./channel/crypto-config/peerOrganizations/Employer.prime.com/peers/peer0.Employer.prime.com/:/etc/hyperledger/crypto/peer
+            - './peer0.Employer.prime.com:/var/hyperledger/production'           
+        depends_on:
+            - couchdb.peer0.Employer
+            - orderer.prime.com
+
+    couchdb.peer0.University:
+        container_name: couchdb.peer0.University
+        image: 'hyperledger/fabric-couchdb:0.4.18'
+        environment:
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=admin
+        ports:
+            - '30050:5984'
+    peer0.University.prime.com:
+        container_name: peer0.University.prime.com
+        extends:
+            file: base.yaml
+            service: peer-base
+        environment:
+            - CORE_PEER_ID=peer0.University.prime.com
+            - CORE_PEER_LOCALMSPID=UniversityMSP
+            - CORE_PEER_ADDRESS=peer0.University.prime.com:9251
+            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.University:5984
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
+            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.University.prime.com:9251
+            - CORE_PEER_LISTENADDRESS=0.0.0.0:9251
+            - CORE_PEER_CHAINCODEADDRESS=peer0.University.prime.com:9252
+            - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9252
+
+        ports:
+            - '9251:9251'
+            - '9253:9253'
+        volumes:
+            - './channel/crypto-config/peerOrganizations/University.prime.com/peers/peer0.University.prime.com/:/etc/hyperledger/crypto/peer'
+            - './peer0.University.prime.com:/var/hyperledger/production'    
+        depends_on:
+            - couchdb.peer0.University
+            - orderer.prime.com
+
+    couchdb.peer0.Student:
+        container_name: couchdb.peer0.Student
+        image: 'hyperledger/fabric-couchdb:0.4.18'
+        environment:
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=admin
+        ports:
+            - '40050:5984'
+    peer0.Student.prime.com:
+        container_name: peer0.Student.prime.com
+        extends:
+            file: base.yaml
+            service: peer-base
+        environment:
+            - CORE_PEER_ID=peer0.Student.prime.com
+            - CORE_PEER_LOCALMSPID=StudentMSP
+            - CORE_PEER_ADDRESS=peer0.Student.prime.com:9351
+            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.Student:5984
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
+            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.Student.prime.com:9351
+            - CORE_PEER_LISTENADDRESS=0.0.0.0:9351
+            - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9352
+        ports:
+            - '9351:9351'
+            - '9353:9353'
+        volumes:
+            - ./channel/crypto-config/peerOrganizations/Student.prime.com/peers/peer0.Student.prime.com/:/etc/hyperledger/crypto/peer
+            - './peer0.Student.prime.com:/var/hyperledger/production'              
+        depends_on:
+            - couchdb.peer0.Student
+            - orderer.prime.com
+
+    cli:
+        container_name: cli
+        image: hyperledger/fabric-tools
+        tty: true
+        environment:
+            - GOPATH=/etc/hyperledger/fabric/peer
+            - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+            - FABRIC_LOGGING_SPEC=INFO
+            - CORE_PEER_ID=peer0.AdminTeam.prime.com
+            - CORE_PEER_LOCALMSPID=AdminTeamMSP
+            - CORE_PEER_ADDRESS=peer0.AdminTeam.prime.com:7051
+            - CORE_PEER_TLS_ENABLED=true
+            - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/tls/server.crt
+            - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/tls/server.key
+            - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/AdminTeam.prime.com/peers/peer0.AdminTeam.prime.com/tls/ca.crt
+            - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/AdminTeam.prime.com/users/Admin@AdminTeam.prime.com/msp
+        working_dir: /etc/hyperledger/fabric/peer
+        command: /bin/bash
+        volumes:
+            - /var/run/:/host/var/run/
+            - ./src/:/etc/hyperledger/fabric/peer/src
+            - ./scripts:/etc/hyperledger/fabric/peer/scripts/
+            - ./channel-artifacts:/etc/hyperledger/fabric/peer/channel-artifacts
+            - ./channel/crypto-config:/etc/hyperledger/fabric/peer/crypto/
+            - ./channel:/etc/hyperledger/configtx
+        ports:
+            - '9092'
+        depends_on:
+            - orderer.prime.com
+            - peer0.AdminTeam.prime.com            
+   
