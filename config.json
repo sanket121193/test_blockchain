@@ -1,0 +1,15 @@
+{
+    "host":"localhost",
+    "port":"4000",
+    "jwt_expiretime": "31536000",
+    "channelName":"primechannel",
+    "CC_SRC_PATH":"../artifacts",
+    "eventWaitTime":"30000",
+    "admins":[
+       {
+          "username":"admin",
+          "secret":"adminpw"
+       }
+    ]
+ }
+ 

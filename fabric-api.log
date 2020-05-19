@@ -1,0 +1,240 @@
+[2020-04-06 19:44:17.330] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-06 19:44:17.334] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-06 19:44:56.351] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:44:56.351] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:44:56.352] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:44:56.353] [DEBUG] PrimeCertWebApp - User name : a0001@prime.com
+[2020-04-06 19:44:56.353] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-06 19:44:56.421] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@prime.com for organization AdminTeam
+[2020-04-06 19:44:56.421] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@prime.com for organization AdminTeam with::failed Error: ENOENT: no such file or directory, open '/home/dayalmukati/MentorChief/hlf-prime-setup/artifacts/channel/crypto-config/peerOrganizations/AdminTeam.prime.com/users/Admin@AdminTeam.prime.com/msp/keystore/4a1051bd7a79754546a18a7dbcfbac779ed863905af67a5506144a2c8817b5a9_sk'
+[2020-04-06 19:44:56.432] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 314 "" "curl/7.68.0"
+[2020-04-06 19:44:56.445] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:44:56.445] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:44:56.446] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:44:56.446] [DEBUG] PrimeCertWebApp - User name : a0002@prime.com
+[2020-04-06 19:44:56.446] [DEBUG] PrimeCertWebApp - Org name  : Student
+[2020-04-06 19:44:56.451] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@prime.com for organization Student
+[2020-04-06 19:44:56.451] [DEBUG] PrimeCertWebApp - Failed to register the username a0002@prime.com for organization Student with::failed Error: ENOENT: no such file or directory, open '/home/dayalmukati/MentorChief/hlf-prime-setup/artifacts/channel/crypto-config/peerOrganizations/Student.prime.com/users/Admin@Student.prime.com/msp/keystore/9938946ed19a7eda78c12a774b622be8d9ac3dd1ae10638be31c763b6cdb228c_sk'
+[2020-04-06 19:44:56.453] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 310 "" "curl/7.68.0"
+[2020-04-06 19:44:56.467] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:44:56.467] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:44:56.467] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:44:56.467] [DEBUG] PrimeCertWebApp - User name : a0003@prime.com
+[2020-04-06 19:44:56.468] [DEBUG] PrimeCertWebApp - Org name  : Employer
+[2020-04-06 19:44:56.473] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0003@prime.com for organization Employer
+[2020-04-06 19:44:56.474] [DEBUG] PrimeCertWebApp - Failed to register the username a0003@prime.com for organization Employer with::failed Error: ENOENT: no such file or directory, open '/home/dayalmukati/MentorChief/hlf-prime-setup/artifacts/channel/crypto-config/peerOrganizations/Employer.prime.com/users/Admin@Employer.prime.com/msp/keystore/7840de6d851bf8912f1a60956926666638c952719a79c41965729b844887653e_sk'
+[2020-04-06 19:44:56.475] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 312 "" "curl/7.68.0"
+[2020-04-06 19:44:56.502] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:44:56.502] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:44:56.502] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:44:56.507] [DEBUG] PrimeCertWebApp - User name : a0004@prime.com
+[2020-04-06 19:44:56.507] [DEBUG] PrimeCertWebApp - Org name  : University
+[2020-04-06 19:44:56.516] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0004@prime.com for organization University
+[2020-04-06 19:44:56.516] [DEBUG] PrimeCertWebApp - Failed to register the username a0004@prime.com for organization University with::failed Error: ENOENT: no such file or directory, open '/home/dayalmukati/MentorChief/hlf-prime-setup/artifacts/channel/crypto-config/peerOrganizations/University.prime.com/users/Admin@University.prime.com/msp/keystore/56542e7c63f3650e50a50f030a0091029f550775793d93d5d72fd5e6e4277ff7_sk'
+[2020-04-06 19:44:56.517] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 316 "" "curl/7.68.0"
+[2020-04-06 19:50:25.057] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:50:25.058] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:50:25.058] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:50:25.058] [DEBUG] PrimeCertWebApp - User name : a0001@prime.com
+[2020-04-06 19:50:25.059] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-06 19:50:25.926] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@prime.com for organization AdminTeam
+[2020-04-06 19:50:25.927] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@prime.com for organization AdminTeam with::failed Error: Failed to generate key for enrollment due to error [Error: EACCES: permission denied, mkdir '/home/dayalmukati/MentorChief']
+[2020-04-06 19:50:25.928] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 151 "" "curl/7.68.0"
+[2020-04-06 19:50:25.946] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:50:25.946] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:50:25.947] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:50:25.947] [DEBUG] PrimeCertWebApp - User name : a0002@prime.com
+[2020-04-06 19:50:25.947] [DEBUG] PrimeCertWebApp - Org name  : Student
+[2020-04-06 19:50:26.019] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@prime.com for organization Student
+[2020-04-06 19:50:26.020] [DEBUG] PrimeCertWebApp - Failed to register the username a0002@prime.com for organization Student with::failed Error: Failed to generate key for enrollment due to error [Error: EACCES: permission denied, mkdir '/home/dayalmukati/MentorChief']
+[2020-04-06 19:50:26.021] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 151 "" "curl/7.68.0"
+[2020-04-06 19:50:26.037] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:50:26.037] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:50:26.037] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:50:26.037] [DEBUG] PrimeCertWebApp - User name : a0003@prime.com
+[2020-04-06 19:50:26.037] [DEBUG] PrimeCertWebApp - Org name  : Employer
+[2020-04-06 19:50:26.098] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0003@prime.com for organization Employer
+[2020-04-06 19:50:26.098] [DEBUG] PrimeCertWebApp - Failed to register the username a0003@prime.com for organization Employer with::failed Error: Failed to generate key for enrollment due to error [Error: EACCES: permission denied, mkdir '/home/dayalmukati/MentorChief']
+[2020-04-06 19:50:26.099] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 151 "" "curl/7.68.0"
+[2020-04-06 19:50:26.112] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:50:26.112] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:50:26.113] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:50:26.113] [DEBUG] PrimeCertWebApp - User name : a0004@prime.com
+[2020-04-06 19:50:26.113] [DEBUG] PrimeCertWebApp - Org name  : University
+[2020-04-06 19:50:26.208] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0004@prime.com for organization University
+[2020-04-06 19:50:26.208] [DEBUG] PrimeCertWebApp - Failed to register the username a0004@prime.com for organization University with::failed Error: Failed to generate key for enrollment due to error [Error: EACCES: permission denied, mkdir '/home/dayalmukati/MentorChief']
+[2020-04-06 19:50:26.210] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 151 "" "curl/7.68.0"
+[2020-04-06 19:51:56.205] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:51:56.206] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:51:56.206] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:51:56.206] [DEBUG] PrimeCertWebApp - User name : a0001@prime.com
+[2020-04-06 19:51:56.206] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-06 19:51:56.275] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@prime.com for organization AdminTeam
+[2020-04-06 19:51:56.275] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@prime.com for organization AdminTeam with::failed Error: Failed to generate key for enrollment due to error [Error: EACCES: permission denied, mkdir '/home/ubuntu']
+[2020-04-06 19:51:56.276] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 151 "" "curl/7.68.0"
+[2020-04-06 19:51:56.290] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:51:56.290] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:51:56.290] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:51:56.291] [DEBUG] PrimeCertWebApp - User name : a0002@prime.com
+[2020-04-06 19:51:56.291] [DEBUG] PrimeCertWebApp - Org name  : Student
+[2020-04-06 19:51:57.652] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@prime.com for organization Student
+[2020-04-06 19:51:57.652] [DEBUG] PrimeCertWebApp - Successfully registered the username a0002@prime.com for organization Student
+[2020-04-06 19:51:57.656] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 260 "" "curl/7.68.0"
+[2020-04-06 19:51:57.666] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:51:57.667] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:51:57.667] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:51:57.667] [DEBUG] PrimeCertWebApp - User name : a0003@prime.com
+[2020-04-06 19:51:57.667] [DEBUG] PrimeCertWebApp - Org name  : Employer
+[2020-04-06 19:51:58.834] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0003@prime.com for organization Employer
+[2020-04-06 19:51:58.834] [DEBUG] PrimeCertWebApp - Successfully registered the username a0003@prime.com for organization Employer
+[2020-04-06 19:51:58.837] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 261 "" "curl/7.68.0"
+[2020-04-06 19:51:58.859] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:51:58.860] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:51:58.860] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:51:58.860] [DEBUG] PrimeCertWebApp - User name : a0004@prime.com
+[2020-04-06 19:51:58.861] [DEBUG] PrimeCertWebApp - Org name  : University
+[2020-04-06 19:52:00.148] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0004@prime.com for organization University
+[2020-04-06 19:52:00.148] [DEBUG] PrimeCertWebApp - Successfully registered the username a0004@prime.com for organization University
+[2020-04-06 19:52:00.149] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 264 "" "curl/7.68.0"
+[2020-04-06 19:52:12.492] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:52:12.492] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:52:12.492] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:52:12.492] [DEBUG] PrimeCertWebApp - User name : a0001@prime.com
+[2020-04-06 19:52:12.493] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-06 19:52:13.725] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@prime.com for organization AdminTeam
+[2020-04-06 19:52:13.725] [DEBUG] PrimeCertWebApp - Successfully registered the username a0001@prime.com for organization AdminTeam
+[2020-04-06 19:52:13.728] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 262 "" "curl/7.68.0"
+[2020-04-06 19:52:13.740] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:52:13.740] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:52:13.740] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:52:13.740] [DEBUG] PrimeCertWebApp - User name : a0002@prime.com
+[2020-04-06 19:52:13.741] [DEBUG] PrimeCertWebApp - Org name  : Student
+[2020-04-06 19:52:13.756] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@prime.com for organization Student
+[2020-04-06 19:52:13.756] [DEBUG] PrimeCertWebApp - Successfully registered the username a0002@prime.com for organization Student
+[2020-04-06 19:52:13.757] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 260 "" "curl/7.68.0"
+[2020-04-06 19:52:13.772] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:52:13.772] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:52:13.772] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:52:13.772] [DEBUG] PrimeCertWebApp - User name : a0003@prime.com
+[2020-04-06 19:52:13.772] [DEBUG] PrimeCertWebApp - Org name  : Employer
+[2020-04-06 19:52:13.791] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0003@prime.com for organization Employer
+[2020-04-06 19:52:13.792] [DEBUG] PrimeCertWebApp - Successfully registered the username a0003@prime.com for organization Employer
+[2020-04-06 19:52:13.792] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 261 "" "curl/7.68.0"
+[2020-04-06 19:52:13.819] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-06 19:52:13.820] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:52:13.820] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-06 19:52:13.821] [DEBUG] PrimeCertWebApp - User name : a0004@prime.com
+[2020-04-06 19:52:13.821] [DEBUG] PrimeCertWebApp - Org name  : University
+[2020-04-06 19:52:13.839] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0004@prime.com for organization University
+[2020-04-06 19:52:13.839] [DEBUG] PrimeCertWebApp - Successfully registered the username a0004@prime.com for organization University
+[2020-04-06 19:52:13.841] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 264 "" "curl/7.68.0"
+[2020-04-06 19:53:53.448] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels
+[2020-04-06 19:53:53.449] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:53:53.451] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0001@prime.com, orgname - AdminTeam
+[2020-04-06 19:53:53.452] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< C R E A T E  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-04-06 19:53:53.452] [DEBUG] PrimeCertWebApp - End point : /channels
+[2020-04-06 19:53:53.452] [DEBUG] PrimeCertWebApp - Channel name : primechannel
+[2020-04-06 19:53:53.452] [DEBUG] PrimeCertWebApp - channelConfigPath : ../artifacts/channel/primechannel.tx
+[2020-04-06 19:53:53.587] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /channels HTTP/1.1" 200 72 "" "curl/7.68.0"
+[2020-04-06 19:58:49.355] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels/primechannel/peers
+[2020-04-06 19:58:49.355] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:58:49.355] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0001@prime.com, orgname - AdminTeam
+[2020-04-06 19:58:49.356] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< J O I N  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-04-06 19:58:49.356] [DEBUG] PrimeCertWebApp - channelName : primechannel
+[2020-04-06 19:58:49.356] [DEBUG] PrimeCertWebApp - peers : peer0.AdminTeam.prime.com
+[2020-04-06 19:58:49.357] [DEBUG] PrimeCertWebApp - username :a0001@prime.com
+[2020-04-06 19:58:49.357] [DEBUG] PrimeCertWebApp - orgname:AdminTeam
+[2020-04-06 19:58:59.417] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /channels/primechannel/peers HTTP/1.1" 200 108 "" "curl/7.68.0"
+[2020-04-06 19:58:59.438] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels/primechannel/peers
+[2020-04-06 19:58:59.438] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:58:59.438] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0002@prime.com, orgname - Student
+[2020-04-06 19:58:59.439] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< J O I N  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-04-06 19:58:59.439] [DEBUG] PrimeCertWebApp - channelName : primechannel
+[2020-04-06 19:58:59.439] [DEBUG] PrimeCertWebApp - peers : peer0.Student.prime.com
+[2020-04-06 19:58:59.439] [DEBUG] PrimeCertWebApp - username :a0002@prime.com
+[2020-04-06 19:58:59.439] [DEBUG] PrimeCertWebApp - orgname:Student
+[2020-04-06 19:59:09.498] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /channels/primechannel/peers HTTP/1.1" 200 106 "" "curl/7.68.0"
+[2020-04-06 19:59:09.516] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels/primechannel/peers
+[2020-04-06 19:59:09.517] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:59:09.517] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0003@prime.com, orgname - Employer
+[2020-04-06 19:59:09.517] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< J O I N  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-04-06 19:59:09.518] [DEBUG] PrimeCertWebApp - channelName : primechannel
+[2020-04-06 19:59:09.518] [DEBUG] PrimeCertWebApp - peers : peer0.Employer.prime.com
+[2020-04-06 19:59:09.518] [DEBUG] PrimeCertWebApp - username :a0003@prime.com
+[2020-04-06 19:59:09.518] [DEBUG] PrimeCertWebApp - orgname:Employer
+[2020-04-06 19:59:19.573] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /channels/primechannel/peers HTTP/1.1" 200 107 "" "curl/7.68.0"
+[2020-04-06 19:59:19.592] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels/primechannel/peers
+[2020-04-06 19:59:19.592] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-06 19:59:19.592] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0004@prime.com, orgname - University
+[2020-04-06 19:59:19.593] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< J O I N  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-04-06 19:59:19.593] [DEBUG] PrimeCertWebApp - channelName : primechannel
+[2020-04-06 19:59:19.593] [DEBUG] PrimeCertWebApp - peers : peer0.University.prime.com
+[2020-04-06 19:59:19.593] [DEBUG] PrimeCertWebApp - username :a0004@prime.com
+[2020-04-06 19:59:19.593] [DEBUG] PrimeCertWebApp - orgname:University
+[2020-04-06 19:59:29.651] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /channels/primechannel/peers HTTP/1.1" 200 109 "" "curl/7.68.0"
+[2020-04-07 09:35:00.946] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-07 09:35:00.949] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-07 11:05:03.370] [DEBUG] PrimeCertWebApp - ::1 - - "GET / HTTP/1.1" 401 1472 "" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"
+[2020-04-07 11:20:43.368] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-07 11:20:43.372] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-07 13:57:09.512] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-07 13:57:09.515] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-07 13:58:15.568] [DEBUG] PrimeCertWebApp - ::1 - - "GET /docs/ HTTP/1.1" 401 1472 "" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"
+[2020-04-07 14:01:47.691] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-07 14:01:47.694] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-07 14:07:33.740] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-07 14:07:33.744] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-07 14:11:01.949] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-07 14:11:01.953] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-07 14:18:19.906] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-07 14:18:19.912] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-07 14:35:19.212] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-07 14:35:19.212] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-07 14:35:19.214] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-07 14:35:19.215] [DEBUG] PrimeCertWebApp - User name : undefined
+[2020-04-07 14:35:19.215] [DEBUG] PrimeCertWebApp - Org name  : Arthandler
+[2020-04-07 14:35:19.248] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 83 "" "undefined"
+[2020-04-07 14:51:40.986] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-07 14:51:40.987] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-07 14:51:40.987] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-07 14:51:40.987] [DEBUG] PrimeCertWebApp - User name : dayalmukati@gmail.com
+[2020-04-07 14:51:40.988] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-07 14:51:43.902] [DEBUG] PrimeCertWebApp - -- returned from registering the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-07 14:51:43.902] [DEBUG] PrimeCertWebApp - Successfully registered the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-07 14:51:43.904] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 276 "" "undefined"
+[2020-04-07 14:57:21.639] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-07 14:57:21.639] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-07 14:57:21.640] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-07 14:57:21.640] [DEBUG] PrimeCertWebApp - User name : dayalmukati@gmail.com
+[2020-04-07 14:57:21.640] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-07 14:57:21.826] [DEBUG] PrimeCertWebApp - -- returned from registering the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-07 14:57:21.826] [DEBUG] PrimeCertWebApp - Successfully registered the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-07 14:57:21.827] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 276 "" "undefined"
+[2020-04-07 14:59:52.112] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-07 14:59:52.114] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-07 14:59:52.115] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-07 14:59:52.116] [DEBUG] PrimeCertWebApp - User name : dayalmukati@gmail.com
+[2020-04-07 14:59:52.116] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-07 14:59:52.162] [DEBUG] PrimeCertWebApp - -- returned from registering the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-07 14:59:52.162] [DEBUG] PrimeCertWebApp - Successfully registered the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-07 14:59:52.164] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 276 "" "undefined"
+[2020-04-07 15:07:05.471] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-07 15:07:05.474] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-07 15:13:37.664] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-07 15:13:37.665] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-07 15:13:37.666] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-07 15:13:37.666] [DEBUG] PrimeCertWebApp - User name : dayalmukati@gmail.com
+[2020-04-07 15:13:37.666] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-07 15:13:38.831] [DEBUG] PrimeCertWebApp - -- returned from registering the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-07 15:13:38.831] [DEBUG] PrimeCertWebApp - Successfully registered the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-07 15:13:38.844] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 276 "" "undefined"
+[2020-04-08 19:23:59.559] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-04-08 19:23:59.562] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-04-08 19:43:44.571] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-04-08 19:43:44.575] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-04-08 19:43:44.580] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-04-08 19:43:44.580] [DEBUG] PrimeCertWebApp - User name : dayalmukati@gmail.com
+[2020-04-08 19:43:44.593] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-04-08 19:43:46.729] [DEBUG] PrimeCertWebApp - -- returned from registering the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-08 19:43:46.729] [DEBUG] PrimeCertWebApp - Successfully registered the username dayalmukati@gmail.com for organization AdminTeam
+[2020-04-08 19:43:46.770] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 276 "" "undefined"

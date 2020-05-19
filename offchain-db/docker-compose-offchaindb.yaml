@@ -1,0 +1,18 @@
+#
+# Copyright HCL Tech All Rights Reserved.
+#
+#
+version: '2'
+
+services:
+  adminteam.offchain.couchdb:
+    container_name: adminteam.offchain.couchdb
+    image: hyperledger/fabric-couchdb:latest
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=admin
+    ports:
+      - "6001:5984"
+    volumes:
+      - ./offchain-db/data:/opt/couchdb/data
+
