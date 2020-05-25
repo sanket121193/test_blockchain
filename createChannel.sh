@@ -1,13 +1,13 @@
-echo
-echo "############### Create channel request ###############"
-export FABRIC_CFG_PATH=/home/dayalmukati/MentorChief/hlf-prime-setup/artifacts/channel
-/home/dayalmukati/MentorChief/hlf-prime-setup/bin/configtxgen -profile FourOrgsChannel -outputCreateChannelTx /home/dayalmukati/MentorChief/hlf-prime-setup/artifacts/channel/primechannel.tx -channelID primechannel
+#echo
+#echo "############### Create channel request ###############"
+#export FABRIC_CFG_PATH=/artifacts/channel
+#/home/dayalmukati/MentorChief/hlf-liquor-setup/bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx /home/dayalmukati/MentorChief/hlf-prime-setup/artifacts/channel/liquorchannel.tx -channelID liquorchannel
 echo "Create channel by using the transaction..."
-curl -s -X POST \http://localhost:3001/channels \-H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDAxQHByaW1lLmNvbSIsIm9yZ05hbWUiOiJBZG1pblRlYW0iLCJpYXQiOjE1ODYxODI5MzJ9.Wd1SUlFjOOe2Y4g0RZ-y255Sgo73QPozTKg1vc_6um0" \
+curl -s -X POST \http://localhost:3001/channels \-H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDA1QGxpcXVvci5jb20iLCJvcmdOYW1lIjoiTWFudWZhY3R1cmVyIiwiaWF0IjoxNTkwMjEzMTMwfQ.WOYbZQZAtcad0I2lx6DYQR1AqHKahZa6yCoY5iVlEVU" \
   -H "content-type: application/json" \
   -d '{
-                "channelName":"primechannel",
-                "channelConfigPath":"../artifacts/channel/primechannel.tx"
+                "channelName":"liquorchannel",
+                "channelConfigPath":"../artifacts/liquorchannel.tx"
 }'
 echo
 echo "############### Create channel request completed. #################"

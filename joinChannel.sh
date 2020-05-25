@@ -1,46 +1,23 @@
 echo
 echo "############# Join channel request for AdminTeam ##################"
 curl -s -X POST \
-  http://localhost:3001/channels/primechannel/peers \  -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDAxQHByaW1lLmNvbSIsIm9yZ05hbWUiOiJBZG1pblRlYW0iLCJpYXQiOjE1ODYxODI5MzJ9.Wd1SUlFjOOe2Y4g0RZ-y255Sgo73QPozTKg1vc_6um0" \
+  http://localhost:3001/channels/liquorchannel/peers \  -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDA0QGxpcXVvci5jb20iLCJvcmdOYW1lIjoiQWRtaW5UZWFtIiwiaWF0IjoxNTkwMjEzMTI5fQ.lD7RfihWwy951bulQVgIFjspbhglCxA6wce5cW4KJ0o" \
   -H "content-type: application/json" \
   -d '{
-                "peers": ["peer0.AdminTeam.prime.com"]
+                "peers": ["peer0.AdminTeam.liquor.com"]
 }'
 echo
 echo "############# Join channel request for AdminTeam completed. ################"
 
 echo
-echo "############# Join channel request for Student ##################"
+echo "############# Join channel request for Manufacturer ##################"
 curl -s -X POST \
-  http://localhost:3001/channels/primechannel/peers \  -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDAyQHByaW1lLmNvbSIsIm9yZ05hbWUiOiJTdHVkZW50IiwiaWF0IjoxNTg2MTgyOTMzfQ.T-pf_ZFBkIl85hcmENId_hCC5WTVKvMD9EHRfTyegsQ" \
+  http://localhost:3001/channels/liquorchannel/peers \  -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDA1QGxpcXVvci5jb20iLCJvcmdOYW1lIjoiTWFudWZhY3R1cmVyIiwiaWF0IjoxNTkwMjEzMTMwfQ.WOYbZQZAtcad0I2lx6DYQR1AqHKahZa6yCoY5iVlEVU" \
   -H "content-type: application/json" \
   -d '{
-                "peers": ["peer0.Student.prime.com"]
+                "peers": ["peer0.Manufacturer.liquor.com"]
 }'
 echo
-echo "############# Join channel request for Student completed. ################"
+echo "############# Join channel request for Manufacturer completed. ################"
 
-echo
-echo "############# Join channel request for Employer##################"
-curl -s -X POST \
-  http://localhost:3001/channels/primechannel/peers \  -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDAzQHByaW1lLmNvbSIsIm9yZ05hbWUiOiJFbXBsb3llciIsImlhdCI6MTU4NjE4MjkzM30.AZ_FXH6UUt742yRMMVnLlxbYBaQp5LYKzuIhlj4J7XY" \
-  -H "content-type: application/json" \
-  -d '{
-                "peers": ["peer0.Employer.prime.com"]
-}'
-echo
-echo "############# Join channel request for Student Employer. ################"
-
-
-echo
-
-echo "############# Join channel request for University##################"
-curl -s -X POST \
-  http://localhost:3001/channels/primechannel/peers \  -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDA0QHByaW1lLmNvbSIsIm9yZ05hbWUiOiJVbml2ZXJzaXR5IiwiaWF0IjoxNTg2MTgyOTMzfQ.8XEBPBs8dF3iy-LpNMle1pleHa6LFYlp0H8HVebtljs" \
-  -H "content-type: application/json" \
-  -d '{
-                "peers": ["peer0.University.prime.com"]
-}'
-echo
-echo "############# Join channel request for University completed. ################"
 

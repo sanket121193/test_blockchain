@@ -47,7 +47,7 @@ client:
     # not.
     cryptoStore:
       # Specific to the underlying KeyValueStore that backs the crypto key store.
-      path: "/home/dayalmukati/MentorChief/hlf-prime-setup/artifacts/fabric-client-kv-AdminTeam"
+      path: "/tmp/fabric-client-kv-AdminTeam"
 
     # [Optional]. Specific to Composer environment
     wallet: wallet-name

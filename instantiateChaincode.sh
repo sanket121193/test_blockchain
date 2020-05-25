@@ -25,7 +25,7 @@ curl -s -X POST \
   -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDAyQGlybS5jb20iLCJvcmdOYW1lIjoiQ3VzdG9kaWFuIiwiaWF0IjoxNTgxNTkyODYyfQ.K-Kz4UyIBpFVvgDZxJGVzpVktHHL_HU_mjTMMHQ9r0o" \
   -H "content-type: application/json" \
   -d '{
-                "peers": ["peer0.Student.prime.com"],
+                "peers": ["peer0.Manufacturer.liquor.com"],
                 "chaincodeName":"'$chaincodeName'",
                 "chaincodeVersion":"'$chaincodeVersion'",
                 "chaincodeType": "golang",

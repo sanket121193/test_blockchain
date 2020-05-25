@@ -1,7 +1,7 @@
 --- 
 OrdererOrgs: 
   - 
-    Domain: prime.com
+    Domain: liquor.com
     Name: Orderer
     Specs: 
       - 
@@ -15,8 +15,8 @@ PeerOrgs:
   - 
     CA: 
       Hostname: ca
-    Domain: Student.prime.com
-    Name: Student
+    Domain: Manufacturer.liquor.com
+    Name: Manufacturer
     Template: 
       Count: 1
       SANS: 
@@ -26,7 +26,7 @@ PeerOrgs:
   - 
     CA: 
       Hostname: ca
-    Domain: AdminTeam.prime.com
+    Domain: AdminTeam.liquor.com
     Name: AdminTeam
     Template: 
       Count: 1
@@ -34,26 +34,4 @@ PeerOrgs:
         - localhost
     Users: 
       Count: 1
-  - 
-    CA: 
-      Hostname: ca
-    Domain: Employer.prime.com
-    Name: Employer
-    Template: 
-      Count: 1
-      SANS: 
-        - localhost
-    Users: 
-      Count: 1
-  - 
-    CA: 
-      Hostname: ca
-    Domain: University.prime.com
-    Name: University
-    Template: 
-      Count: 1
-      SANS: 
-        - localhost
-    Users: 
-      Count: 1
- 
+  

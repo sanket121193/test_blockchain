@@ -1,4 +1,4 @@
-# Copyright prime Tech. All Rights Reserved.
+# Copyright liquor Tech. All Rights Reserved.
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -25,7 +25,7 @@ Organizations:
         ID: OrdererMSP
 
         # MSPDir is the filesystem path which contains the MSP configuration
-        MSPDir: crypto-config/ordererOrganizations/prime.com/msp
+        MSPDir: crypto-config/ordererOrganizations/liquor.com/msp
 
     - &AdminTeam
         # DefaultOrg defines the organization which is used in the sampleconfig
@@ -35,65 +35,33 @@ Organizations:
         # ID to load the MSP definition as
         ID: AdminTeamMSP
 
-        MSPDir: crypto-config/peerOrganizations/AdminTeam.prime.com/msp
+        MSPDir: crypto-config/peerOrganizations/AdminTeam.liquor.com/msp
 
         AnchorPeers:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: peer0.adminteam.prime.com
+            - Host: peer0.adminteam.liquor.com
               Port: 7051
 
-    - &Employer
+    - &Manufacturer
         # DefaultOrg defines the organization which is used in the sampleconfig
         # of the fabric.git development environment
-        Name: EmployerMSP
+        Name: ManufacturerMSP
 
         # ID to load the MSP definition as
-        ID: EmployerMSP
+        ID: ManufacturerMSP
 
-        MSPDir: crypto-config/peerOrganizations/Employer.prime.com/msp
+        MSPDir: crypto-config/peerOrganizations/Manufacturer.liquor.com/msp
 
         AnchorPeers:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: peer0.Employer.prime.com
+            - Host: peer0.Manufacturer.liquor.com
               Port: 7056
 
-    - &University
-        # DefaultOrg defines the organization which is used in the sampleconfig
-        # of the fabric.git development environment
-        Name: UniversityMSP
-
-        # ID to load the MSP definition as
-        ID: UniversityMSP
-
-        MSPDir: crypto-config/peerOrganizations/University.prime.com/msp
-
-        AnchorPeers:
-            # AnchorPeers defines the location of peers which can be used
-            # for cross org gossip communication.  Note, this value is only
-            # encoded in the genesis block in the Application section context
-            - Host: peer0.University.prime.com
-              Port: 9251
-
-    - &Student
-        # DefaultOrg defines the organization which is used in the sampleconfig
-        # of the fabric.git development environment
-        Name: StudentMSP
-
-        # ID to load the MSP definition as
-        ID: StudentMSP
-
-        MSPDir: crypto-config/peerOrganizations/Student.prime.com/msp
-
-        AnchorPeers:
-            # AnchorPeers defines the location of peers which can be used
-            # for cross org gossip communication.  Note, this value is only
-            # encoded in the genesis block in the Application section context
-            - Host: peer0.Student.prime.com
-              Port: 9351
+    
 
 ################################################################################
 #
@@ -195,7 +163,7 @@ Orderer: &OrdererDefaults
     OrdererType: etcdraft
 
     Addresses:
-        - orderer.prime.com:7050
+        - orderer.liquor.com:7050
 
     # Batch Timeout: The amount of time to wait before creating a batch
     BatchTimeout: 2s
@@ -228,26 +196,26 @@ Orderer: &OrdererDefaults
         # a subset of the host:port items enumerated in this list should be
         # replicated under the Orderer.Addresses key above.
         Consenters:
-            - Host: orderer.prime.com
+            - Host: orderer.liquor.com
               Port: 7050
-              ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer.prime.com/tls/server.crt
-              ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer.prime.com/tls/server.crt
-            - Host: orderer1.prime.com
+              ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer.liquor.com/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer.liquor.com/tls/server.crt
+            - Host: orderer1.liquor.com
               Port: 7050
-              ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer1.prime.com/tls/server.crt
-              ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer1.prime.com/tls/server.crt
-            - Host: orderer2.prime.com
+              ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer1.liquor.com/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer1.liquor.com/tls/server.crt
+            - Host: orderer2.liquor.com
               Port: 7050
-              ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer2.prime.com/tls/server.crt
-              ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer2.prime.com/tls/server.crt
-            - Host: orderer3.prime.com
+              ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer2.liquor.com/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer2.liquor.com/tls/server.crt
+            - Host: orderer3.liquor.com
               Port: 7050
-              ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer3.prime.com/tls/server.crt
-              ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer3.prime.com/tls/server.crt
-            - Host: orderer4.prime.com
+              ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer3.liquor.com/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer3.liquor.com/tls/server.crt
+            - Host: orderer4.liquor.com
               Port: 7050
-              ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer4.prime.com/tls/server.crt
-              ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer4.prime.com/tls/server.crt
+              ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer4.liquor.com/tls/server.crt
+              ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer4.liquor.com/tls/server.crt
 
     # Organizations is the list of orgs which are defined as participants on
     # the orderer side of the network
@@ -263,7 +231,7 @@ Orderer: &OrdererDefaults
 ################################################################################
 Profiles:
 
-    FourOrgsOrdererGenesis:
+    TwoOrgsOrdererGenesis:
         Orderer:
             <<: *OrdererDefaults
             Organizations:
@@ -273,24 +241,21 @@ Profiles:
         Consortiums:
             SampleConsortium:
                 Organizations:
-                    - *Student
+                    - *Manufacturer
                     - *AdminTeam
-                    - *Employer
-                    - *University
+                   
                     
-    FourOrgsChannel:
+    TwoOrgsChannel:
         Consortium: SampleConsortium
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - *Student
+                - *Manufacturer
                 - *AdminTeam
-                - *Employer
-                - *University
             Capabilities:
                 <<: *ApplicationCapabilities
                             
-    FourOrgsMultiNodeEtcdRaft:
+    TwoOrgsMultiNodeEtcdRaft:
         Capabilities:
             <<: *ChannelCapabilities
         Orderer:
@@ -298,32 +263,32 @@ Profiles:
             OrdererType: etcdraft
             EtcdRaft:
                 Consenters:
-                - Host: orderer.prime.com
+                - Host: orderer.liquor.com
                   Port: 7050
-                  ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer.prime.com/tls/server.crt
-                  ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer.prime.com/tls/server.crt
-                - Host: orderer1.prime.com
+                  ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer.liquor.com/tls/server.crt
+                  ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer.liquor.com/tls/server.crt
+                - Host: orderer1.liquor.com
                   Port: 7050
-                  ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer1.prime.com/tls/server.crt
-                  ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer1.prime.com/tls/server.crt
-                - Host: orderer2.prime.com
+                  ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer1.liquor.com/tls/server.crt
+                  ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer1.liquor.com/tls/server.crt
+                - Host: orderer2.liquor.com
                   Port: 7050
-                  ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer2.prime.com/tls/server.crt
-                  ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer2.prime.com/tls/server.crt
-                - Host: orderer3.prime.com
+                  ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer2.liquor.com/tls/server.crt
+                  ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer2.liquor.com/tls/server.crt
+                - Host: orderer3.liquor.com
                   Port: 7050
-                  ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer3.prime.com/tls/server.crt
-                  ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer3.prime.com/tls/server.crt
-                - Host: orderer4.prime.com
+                  ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer3.liquor.com/tls/server.crt
+                  ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer3.liquor.com/tls/server.crt
+                - Host: orderer4.liquor.com
                   Port: 7050
-                  ClientTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer4.prime.com/tls/server.crt
-                  ServerTLSCert: crypto-config/ordererOrganizations/prime.com/orderers/orderer4.prime.com/tls/server.crt
+                  ClientTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer4.liquor.com/tls/server.crt
+                  ServerTLSCert: crypto-config/ordererOrganizations/liquor.com/orderers/orderer4.liquor.com/tls/server.crt
             Addresses:
-                - orderer.prime.com:7050
-                - orderer1.prime.com:7050
-                - orderer2.prime.com:7050
-                - orderer3.prime.com:7050
-                - orderer4.prime.com:7050
+                - orderer.liquor.com:7050
+                - orderer1.liquor.com:7050
+                - orderer2.liquor.com:7050
+                - orderer3.liquor.com:7050
+                - orderer4.liquor.com:7050
 
             Organizations:
             - *OrdererOrg
@@ -336,7 +301,6 @@ Profiles:
         Consortiums:
             SampleConsortium:
                 Organizations:
-                - *Student
+                - *Manufacturer
                 - *AdminTeam
-                - *Employer
-                - *University
+                

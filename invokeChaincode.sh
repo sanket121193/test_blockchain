@@ -26,7 +26,7 @@ curl -s -X POST \
   -H "authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImEwMDAyIiwib3JnTmFtZSI6IkN1c3RvZGlhbiIsImlhdCI6MTU4MTY4OTE5N30.7Rjj0BgO-ep9sZbC8y1DHF9BgQisEAdc3aO-fQxK4Mw" \
   -H "content-type: application/json" \
   -d '{
-                "peers": ["peer0.Student.prime.com"],
+                "peers": ["peer0.Manufacturer.liquor.com"],
                 "fcn":"'$functionName'",
                "args":["ashin"]
 }'

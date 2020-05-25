@@ -5,8 +5,8 @@
 version: '2'
 
 services:
-  adminteam.offchain.couchdb:
-    container_name: adminteam.offchain.couchdb
+  manufacturer.offchain.couchdb:
+    container_name: manufacturer.offchain.couchdb
     image: hyperledger/fabric-couchdb:latest
     environment:
       - COUCHDB_USER=admin

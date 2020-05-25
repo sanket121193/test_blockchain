@@ -238,3 +238,175 @@
 [2020-04-08 19:43:46.729] [DEBUG] PrimeCertWebApp - -- returned from registering the username dayalmukati@gmail.com for organization AdminTeam
 [2020-04-08 19:43:46.729] [DEBUG] PrimeCertWebApp - Successfully registered the username dayalmukati@gmail.com for organization AdminTeam
 [2020-04-08 19:43:46.770] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 276 "" "undefined"
+[2020-05-22 16:03:37.841] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-05-22 16:03:37.846] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-05-22 16:03:50.637] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-22 16:03:50.637] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-22 16:03:50.638] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-22 16:03:50.638] [DEBUG] PrimeCertWebApp - User name : a0001@liquor.com
+[2020-05-22 16:03:50.638] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-05-22 16:03:50.692] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@liquor.com for organization AdminTeam
+[2020-05-22 16:03:50.692] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@liquor.com for organization AdminTeam with::failed Error: ENOENT: no such file or directory, open '/home/sanket93/Desktop/gaurav-poc/liquor_network/primecert-network/artifacts/artifacts/channel/crypto-config/peerOrganizations/AdminTeam.liquor.com/ca/ca.AdminTeam.liquor.com-cert.pem'
+[2020-05-22 16:03:50.702] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 269 "" "curl/7.65.3"
+[2020-05-22 16:03:50.715] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-22 16:03:50.716] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-22 16:03:50.716] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-22 16:03:50.716] [DEBUG] PrimeCertWebApp - User name : a0002@liquor.com
+[2020-05-22 16:03:50.716] [DEBUG] PrimeCertWebApp - Org name  : Manufacturer
+[2020-05-22 16:03:50.727] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@liquor.com for organization Manufacturer
+[2020-05-22 16:03:50.727] [DEBUG] PrimeCertWebApp - Failed to register the username a0002@liquor.com for organization Manufacturer with::failed Error: ENOENT: no such file or directory, open '/home/sanket93/Desktop/gaurav-poc/liquor_network/primecert-network/artifacts/artifacts/channel/crypto-config/peerOrganizations/Manufacturer.liquor.com/ca/ca.Manufacturer.liquor.com-cert.pem'
+[2020-05-22 16:03:50.729] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 275 "" "curl/7.65.3"
+[2020-05-22 16:04:53.337] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-22 16:04:53.338] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-22 16:04:53.338] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-22 16:04:53.338] [DEBUG] PrimeCertWebApp - User name : a0001@liquor.com
+[2020-05-22 16:04:53.338] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-05-22 16:04:53.345] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@liquor.com for organization AdminTeam
+[2020-05-22 16:04:53.345] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@liquor.com for organization AdminTeam with::failed Error: ENOENT: no such file or directory, open '/home/sanket93/Desktop/gaurav-poc/liquor_network/primecert-network/artifacts/artifacts/channel/crypto-config/peerOrganizations/AdminTeam.liquor.com/ca/ca.AdminTeam.liquor.com-cert.pem'
+[2020-05-22 16:04:53.346] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 269 "" "curl/7.65.3"
+[2020-05-22 16:04:53.367] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-22 16:04:53.367] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-22 16:04:53.367] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-22 16:04:53.368] [DEBUG] PrimeCertWebApp - User name : a0002@liquor.com
+[2020-05-22 16:04:53.368] [DEBUG] PrimeCertWebApp - Org name  : Manufacturer
+[2020-05-22 16:04:53.374] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@liquor.com for organization Manufacturer
+[2020-05-22 16:04:53.375] [DEBUG] PrimeCertWebApp - Failed to register the username a0002@liquor.com for organization Manufacturer with::failed Error: ENOENT: no such file or directory, open '/home/sanket93/Desktop/gaurav-poc/liquor_network/primecert-network/artifacts/artifacts/channel/crypto-config/peerOrganizations/Manufacturer.liquor.com/ca/ca.Manufacturer.liquor.com-cert.pem'
+[2020-05-22 16:04:53.376] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 275 "" "curl/7.65.3"
+[2020-05-23 11:09:13.129] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-05-23 11:09:13.132] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-05-23 11:09:40.022] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:09:40.022] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:09:40.023] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:09:40.023] [DEBUG] PrimeCertWebApp - User name : a0001@liquor.com
+[2020-05-23 11:09:40.023] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-05-23 11:09:41.178] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@liquor.com for organization AdminTeam
+[2020-05-23 11:09:41.179] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@liquor.com for organization AdminTeam with::failed Error: Failed to generate key for enrollment due to error [Error: EACCES: permission denied, mkdir '/home/dayalmukati']
+[2020-05-23 11:09:41.186] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 156 "" "curl/7.65.3"
+[2020-05-23 11:09:41.198] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:09:41.198] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:09:41.198] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:09:41.198] [DEBUG] PrimeCertWebApp - User name : a0002@liquor.com
+[2020-05-23 11:09:41.199] [DEBUG] PrimeCertWebApp - Org name  : Manufacturer
+[2020-05-23 11:09:41.233] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@liquor.com for organization Manufacturer
+[2020-05-23 11:09:41.233] [DEBUG] PrimeCertWebApp - Failed to register the username a0002@liquor.com for organization Manufacturer with::failed Error: ENOENT: no such file or directory, open '/home/sanket93/Desktop/gaurav-poc/liquor_network/primecert-network/artifacts/crypto-config/peerOrganizations/Manufacturer.liquor.com/users/Admin@Manufacturer.liquor.com/msp/keystore/36ad09f2e8e6e4f631cf9d3d9556647c8b2673a81e1d15b3b903d9a2ff88bbb8_sk'
+[2020-05-23 11:09:41.237] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 335 "" "curl/7.65.3"
+[2020-05-23 11:11:29.369] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:11:29.370] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:11:29.370] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:11:29.370] [DEBUG] PrimeCertWebApp - User name : a0001@liquor.com
+[2020-05-23 11:11:29.370] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-05-23 11:11:29.450] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@liquor.com for organization AdminTeam
+[2020-05-23 11:11:29.450] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@liquor.com for organization AdminTeam with::failed Error: Failed to generate key for enrollment due to error [Error: EACCES: permission denied, mkdir '/artifacts']
+[2020-05-23 11:11:29.451] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 149 "" "curl/7.65.3"
+[2020-05-23 11:11:29.467] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:11:29.467] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:11:29.468] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:11:29.468] [DEBUG] PrimeCertWebApp - User name : a0002@liquor.com
+[2020-05-23 11:11:29.468] [DEBUG] PrimeCertWebApp - Org name  : Manufacturer
+[2020-05-23 11:11:29.474] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@liquor.com for organization Manufacturer
+[2020-05-23 11:11:29.474] [DEBUG] PrimeCertWebApp - Failed to register the username a0002@liquor.com for organization Manufacturer with::failed Error: ENOENT: no such file or directory, open '/home/sanket93/Desktop/gaurav-poc/liquor_network/primecert-network/artifacts/crypto-config/peerOrganizations/Manufacturer.liquor.com/users/Admin@Manufacturer.liquor.com/msp/keystore/36ad09f2e8e6e4f631cf9d3d9556647c8b2673a81e1d15b3b903d9a2ff88bbb8_sk'
+[2020-05-23 11:11:29.475] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 335 "" "curl/7.65.3"
+[2020-05-23 11:13:37.349] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-05-23 11:13:37.352] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-05-23 11:13:41.307] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:13:41.307] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:13:41.308] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:13:41.308] [DEBUG] PrimeCertWebApp - User name : a0001@liquor.com
+[2020-05-23 11:13:41.308] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-05-23 11:13:43.148] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@liquor.com for organization AdminTeam
+[2020-05-23 11:13:43.148] [DEBUG] PrimeCertWebApp - Successfully registered the username a0001@liquor.com for organization AdminTeam
+[2020-05-23 11:13:43.154] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 265 "" "curl/7.65.3"
+[2020-05-23 11:13:43.168] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:13:43.169] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:13:43.169] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:13:43.169] [DEBUG] PrimeCertWebApp - User name : a0002@liquor.com
+[2020-05-23 11:13:43.169] [DEBUG] PrimeCertWebApp - Org name  : Manufacturer
+[2020-05-23 11:13:43.180] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@liquor.com for organization Manufacturer
+[2020-05-23 11:13:43.180] [DEBUG] PrimeCertWebApp - Failed to register the username a0002@liquor.com for organization Manufacturer with::failed Error: ENOENT: no such file or directory, open '/home/sanket93/Desktop/gaurav-poc/liquor_network/primecert-network/artifacts/crypto-config/peerOrganizations/Manufacturer.liquor.com/users/Admin@Manufacturer.liquor.com/msp/keystore/36ad09f2e8e6e4f631cf9d3d9556647c8b2673a81e1d15b3b903d9a2ff88bbb8_sk'
+[2020-05-23 11:13:43.182] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 335 "" "curl/7.65.3"
+[2020-05-23 11:16:18.937] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-05-23 11:16:18.940] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-05-23 11:16:46.371] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:16:46.371] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:16:46.372] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:16:46.372] [DEBUG] PrimeCertWebApp - User name : a0001@liquor.com
+[2020-05-23 11:16:46.372] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-05-23 11:16:47.373] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@liquor.com for organization AdminTeam
+[2020-05-23 11:16:47.373] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@liquor.com for organization AdminTeam with::failed Error: fabric-ca request register failed with errors [[{"code":0,"message":"Registration of 'a0001@liquor.com' failed: Identity 'a0001@liquor.com' is already registered"}]]
+[2020-05-23 11:16:47.378] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 215 "" "curl/7.65.3"
+[2020-05-23 11:16:47.393] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:16:47.393] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:16:47.393] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:16:47.394] [DEBUG] PrimeCertWebApp - User name : a0002@liquor.com
+[2020-05-23 11:16:47.394] [DEBUG] PrimeCertWebApp - Org name  : Manufacturer
+[2020-05-23 11:16:49.659] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@liquor.com for organization Manufacturer
+[2020-05-23 11:16:49.660] [DEBUG] PrimeCertWebApp - Successfully registered the username a0002@liquor.com for organization Manufacturer
+[2020-05-23 11:16:49.662] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 269 "" "curl/7.65.3"
+[2020-05-23 11:21:20.039] [INFO] PrimeCertWebApp - ****************** SERVER STARTED ************************
+[2020-05-23 11:21:20.042] [INFO] PrimeCertWebApp - ***************  http://localhost:3001  ******************
+[2020-05-23 11:21:38.945] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:21:38.945] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:21:38.946] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:21:38.946] [DEBUG] PrimeCertWebApp - User name : a0001@liquor.com
+[2020-05-23 11:21:38.946] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-05-23 11:21:39.963] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0001@liquor.com for organization AdminTeam
+[2020-05-23 11:21:39.964] [DEBUG] PrimeCertWebApp - Failed to register the username a0001@liquor.com for organization AdminTeam with::failed Error: fabric-ca request register failed with errors [[{"code":0,"message":"Registration of 'a0001@liquor.com' failed: Identity 'a0001@liquor.com' is already registered"}]]
+[2020-05-23 11:21:39.970] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 215 "" "curl/7.65.3"
+[2020-05-23 11:21:39.984] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:21:39.984] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:21:39.985] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:21:39.985] [DEBUG] PrimeCertWebApp - User name : a0002@liquor.com
+[2020-05-23 11:21:39.985] [DEBUG] PrimeCertWebApp - Org name  : Manufacturer
+[2020-05-23 11:21:40.532] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0002@liquor.com for organization Manufacturer
+[2020-05-23 11:21:40.532] [DEBUG] PrimeCertWebApp - Failed to register the username a0002@liquor.com for organization Manufacturer with::failed Error: fabric-ca request register failed with errors [[{"code":0,"message":"Registration of 'a0002@liquor.com' failed: Identity 'a0002@liquor.com' is already registered"}]]
+[2020-05-23 11:21:40.536] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 215 "" "curl/7.65.3"
+[2020-05-23 11:22:09.512] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:22:09.513] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:22:09.513] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:22:09.513] [DEBUG] PrimeCertWebApp - User name : a0004@liquor.com
+[2020-05-23 11:22:09.513] [DEBUG] PrimeCertWebApp - Org name  : AdminTeam
+[2020-05-23 11:22:10.785] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0004@liquor.com for organization AdminTeam
+[2020-05-23 11:22:10.785] [DEBUG] PrimeCertWebApp - Successfully registered the username a0004@liquor.com for organization AdminTeam
+[2020-05-23 11:22:10.787] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 265 "" "curl/7.65.3"
+[2020-05-23 11:22:10.804] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /users
+[2020-05-23 11:22:10.805] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:22:10.805] [DEBUG] PrimeCertWebApp - End point : /users
+[2020-05-23 11:22:10.806] [DEBUG] PrimeCertWebApp - User name : a0005@liquor.com
+[2020-05-23 11:22:10.806] [DEBUG] PrimeCertWebApp - Org name  : Manufacturer
+[2020-05-23 11:22:13.062] [DEBUG] PrimeCertWebApp - -- returned from registering the username a0005@liquor.com for organization Manufacturer
+[2020-05-23 11:22:13.062] [DEBUG] PrimeCertWebApp - Successfully registered the username a0005@liquor.com for organization Manufacturer
+[2020-05-23 11:22:13.063] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /users HTTP/1.1" 200 269 "" "curl/7.65.3"
+[2020-05-23 11:23:25.260] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels
+[2020-05-23 11:23:25.260] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:23:25.262] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0005@liquor.com, orgname - Manufacturer
+[2020-05-23 11:23:25.263] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< C R E A T E  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-05-23 11:23:25.263] [DEBUG] PrimeCertWebApp - End point : /channels
+[2020-05-23 11:23:25.263] [DEBUG] PrimeCertWebApp - Channel name : liquorchannel
+[2020-05-23 11:23:25.264] [DEBUG] PrimeCertWebApp - channelConfigPath : ../artifacts/liquorchannel.tx
+[2020-05-23 11:23:25.433] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /channels HTTP/1.1" 200 73 "" "curl/7.65.3"
+[2020-05-23 11:28:03.664] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels/primechannel/peers
+[2020-05-23 11:28:03.665] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:28:03.665] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0004@liquor.com, orgname - AdminTeam
+[2020-05-23 11:28:03.666] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< J O I N  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-05-23 11:28:03.666] [DEBUG] PrimeCertWebApp - channelName : primechannel
+[2020-05-23 11:28:03.667] [DEBUG] PrimeCertWebApp - peers : peer0.AdminTeam.liquor.com
+[2020-05-23 11:28:03.667] [DEBUG] PrimeCertWebApp - username :a0004@liquor.com
+[2020-05-23 11:28:03.667] [DEBUG] PrimeCertWebApp - orgname:AdminTeam
+[2020-05-23 11:28:44.456] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels/liquorchannel/peers
+[2020-05-23 11:28:44.456] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:28:44.457] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0004@liquor.com, orgname - AdminTeam
+[2020-05-23 11:28:44.457] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< J O I N  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-05-23 11:28:44.457] [DEBUG] PrimeCertWebApp - channelName : liquorchannel
+[2020-05-23 11:28:44.458] [DEBUG] PrimeCertWebApp - peers : peer0.AdminTeam.liquor.com
+[2020-05-23 11:28:44.458] [DEBUG] PrimeCertWebApp - username :a0004@liquor.com
+[2020-05-23 11:28:44.458] [DEBUG] PrimeCertWebApp - orgname:AdminTeam
+[2020-05-23 11:28:54.526] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /channels/liquorchannel/peers HTTP/1.1" 200 109 "" "curl/7.65.3"
+[2020-05-23 11:28:54.550] [DEBUG] PrimeCertWebApp -  ------>>>>>> new request for /channels/liquorchannel/peers
+[2020-05-23 11:28:54.551] [DEBUG] PrimeCertWebApp -  ------>>>>>> 00000new request for [object Object]
+[2020-05-23 11:28:54.551] [DEBUG] PrimeCertWebApp - Decoded from JWT token: username - a0005@liquor.com, orgname - Manufacturer
+[2020-05-23 11:28:54.552] [INFO] PrimeCertWebApp - <<<<<<<<<<<<<<<<< J O I N  C H A N N E L >>>>>>>>>>>>>>>>>
+[2020-05-23 11:28:54.552] [DEBUG] PrimeCertWebApp - channelName : liquorchannel
+[2020-05-23 11:28:54.552] [DEBUG] PrimeCertWebApp - peers : peer0.Manufacturer.liquor.com
+[2020-05-23 11:28:54.553] [DEBUG] PrimeCertWebApp - username :a0005@liquor.com
+[2020-05-23 11:28:54.553] [DEBUG] PrimeCertWebApp - orgname:Manufacturer
+[2020-05-23 11:29:04.605] [DEBUG] PrimeCertWebApp - ::ffff:127.0.0.1 - - "POST /channels/liquorchannel/peers HTTP/1.1" 200 112 "" "curl/7.65.3"
