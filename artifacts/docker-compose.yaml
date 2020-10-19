@@ -1,41 +1,41 @@
 version: '2.0'
 services:
-    ca.AdminTeam.liquor.com:
-        image: 'hyperledger/fabric-ca:1.4.3'
+    ca.org2.example.com:
+        image: 'hyperledger/fabric-ca:1.4.4'
         environment:
             - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-            - FABRIC_CA_SERVER_CA_NAME=ca-AdminTeam
-            - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.AdminTeam.liquor.com-cert.pem
+            - FABRIC_CA_SERVER_CA_NAME=ca-org2
+            - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.example.com-cert.pem
             - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/af4c16d3dfc2bf28cd87b44f48af425d8a41f9b18f254bbc85691273ea950eb1_sk
             - FABRIC_CA_SERVER_TLS_ENABLED=true
-            - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.AdminTeam.liquor.com-cert.pem
+            - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.example.com-cert.pem
             - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/af4c16d3dfc2bf28cd87b44f48af425d8a41f9b18f254bbc85691273ea950eb1_sk
         ports:
             - '7054:7054'
         command: 'sh -c ''fabric-ca-server start -b admin:adminpw -d'''
         volumes:
-            - './crypto-config/peerOrganizations/AdminTeam.liquor.com/ca/:/etc/hyperledger/fabric-ca-server-config'
-        container_name: ca_peerAdminTeam
-    ca.Manufacturer.liquor.com:
-        image: 'hyperledger/fabric-ca:1.4.3'
+            - './crypto-config/peerOrganizations/org2.example.com/ca/:/etc/hyperledger/fabric-ca-server-config'
+        container_name: ca_peerOrg2
+    ca.org1.example.com:
+        image: 'hyperledger/fabric-ca:1.4.4'
         environment:
             - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-            - FABRIC_CA_SERVER_CA_NAME=ca-Manufacturer
-            - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.Manufacturer.liquor.com-cert.pem
+            - FABRIC_CA_SERVER_CA_NAME=ca-org1
+            - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem
             - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/36ad09f2e8e6e4f631cf9d3d9556647c8b2673a81e1d15b3b903d9a2ff88bbb8_sk
             - FABRIC_CA_SERVER_TLS_ENABLED=true
-            - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.Manufacturer.liquor.com-cert.pem
+            - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem
             - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/36ad09f2e8e6e4f631cf9d3d9556647c8b2673a81e1d15b3b903d9a2ff88bbb8_sk
         ports:
             - '7154:7054'
         command: 'sh -c ''fabric-ca-server start -b admin:adminpw -d'''
         volumes:
-            - './crypto-config/peerOrganizations/Manufacturer.liquor.com/ca/:/etc/hyperledger/fabric-ca-server-config'
-        container_name: ca_peerManufacturer
+            - './crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config'
+        container_name: ca_peerorg1
     
-    orderer.liquor.com:
-        container_name: orderer.liquor.com
-        image: 'hyperledger/fabric-orderer:1.4.3'
+    orderer.example.com:
+        container_name: orderer.example.com
+        image: 'hyperledger/fabric-orderer:1.4.4'
         environment:
             - ORDERER_GENERAL_LOGLEVEL=debug
             - FABRIC_LOGGING_SPEC=INFO
@@ -50,22 +50,22 @@ services:
             - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt           
             - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
-            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerManufacturer/tls/ca.crt]
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerorg2/tls/ca.crt, /etc/hyperledger/crypto/peerorg1/tls/ca.crt]
         working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
         command: orderer
         ports:
             - '7050:7050'
         volumes:
             - '../artifacts:/etc/hyperledger/configtx'
-            - './crypto-config/ordererOrganizations/liquor.com/orderers/orderer.liquor.com/:/etc/hyperledger/crypto/orderer'
-            - './crypto-config/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/:/etc/hyperledger/crypto/peerAdminTeam'
-            - './crypto-config/peerOrganizations/Manufacturer.liquor.com/peers/peer0.Manufacturer.liquor.com/:/etc/hyperledger/crypto/peerManufacturer'
+            - './crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/:/etc/hyperledger/crypto/orderer'
+            - './crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/hyperledger/crypto/peerorg2'
+            - './crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/crypto/peerorg1'
             
-#            - './orderer.liquor.com:/var/hyperledger/production/orderer'
+            - './orderer.example.com:/var/hyperledger/production/orderer'
 
-    orderer1.liquor.com:
-        container_name: orderer1.liquor.com
-        image: 'hyperledger/fabric-orderer:1.4.3'
+    orderer1.example.com:
+        container_name: orderer1.example.com
+        image: 'hyperledger/fabric-orderer:1.4.4'
         environment:
             - ORDERER_GENERAL_LOGLEVEL=debug
             - FABRIC_LOGGING_SPEC=INFO
@@ -80,22 +80,22 @@ services:
             - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
-            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerManufacturer/tls/ca.crt]          
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerorg2/tls/ca.crt, /etc/hyperledger/crypto/peerorg1/tls/ca.crt]          
         working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
         command: orderer
         ports:
             - '8050:7050'
         volumes:
             - '../artifacts:/etc/hyperledger/configtx'
-            - './crypto-config/ordererOrganizations/liquor.com/orderers/orderer1.liquor.com/:/etc/hyperledger/crypto/orderer'
-            - './crypto-config/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/:/etc/hyperledger/crypto/peerAdminTeam'
-            - './crypto-config/peerOrganizations/Manufacturer.liquor.com/peers/peer0.Manufacturer.liquor.com/:/etc/hyperledger/crypto/peerManufacturer'
+            - './crypto-config/ordererOrganizations/example.com/orderers/orderer1.example.com/:/etc/hyperledger/crypto/orderer'
+            - './crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/hyperledger/crypto/peerorg2'
+            - './crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/crypto/peerorg1'
             
-#            - './orderer1.liquor.com:/var/hyperledger/production/orderer'
+            - './orderer1.example.com:/var/hyperledger/production/orderer'
 
-    orderer2.liquor.com:
-        container_name: orderer2.liquor.com
-        image: 'hyperledger/fabric-orderer:1.4.3'
+    orderer2.example.com:
+        container_name: orderer2.example.com
+        image: 'hyperledger/fabric-orderer:1.4.4'
         environment:
             - ORDERER_GENERAL_LOGLEVEL=debug
             - FABRIC_LOGGING_SPEC=INFO
@@ -110,22 +110,22 @@ services:
             - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
-            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerManufacturer/tls/ca.crt] 
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerorg2/tls/ca.crt, /etc/hyperledger/crypto/peerorg1/tls/ca.crt] 
         working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
         command: orderer
         ports:
             - '9050:7050'
         volumes:
             - '../artifacts:/etc/hyperledger/configtx'
-            - './crypto-config/ordererOrganizations/liquor.com/orderers/orderer2.liquor.com/:/etc/hyperledger/crypto/orderer'
-            - './crypto-config/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/:/etc/hyperledger/crypto/peerAdminTeam'
-            - './crypto-config/peerOrganizations/Manufacturer.liquor.com/peers/peer0.Manufacturer.liquor.com/:/etc/hyperledger/crypto/peerManufacturer'
-#            - './orderer2.liquor.com:/var/hyperledger/production/orderer'
+            - './crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/:/etc/hyperledger/crypto/orderer'
+            - './crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/hyperledger/crypto/peerorg2'
+            - './crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/crypto/peerorg1'
+            - './orderer2.example.com:/var/hyperledger/production/orderer'
            
             
-    orderer3.liquor.com:
-        container_name: orderer3.liquor.com
-        image: 'hyperledger/fabric-orderer:1.4.3'
+    orderer3.example.com:
+        container_name: orderer3.example.com
+        image: 'hyperledger/fabric-orderer:1.4.4'
         environment:
             - ORDERER_GENERAL_LOGLEVEL=debug
             - FABRIC_LOGGING_SPEC=INFO
@@ -140,21 +140,21 @@ services:
             - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
-            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerManufacturer/tls/ca.crt]
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerorg2/tls/ca.crt, /etc/hyperledger/crypto/peerorg1/tls/ca.crt]
         working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
         command: orderer
         ports:
             - '10050:7050'
         volumes:
             - '../artifacts:/etc/hyperledger/configtx'
-            - './crypto-config/ordererOrganizations/liquor.com/orderers/orderer3.liquor.com/:/etc/hyperledger/crypto/orderer'
-            - './crypto-config/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/:/etc/hyperledger/crypto/peerAdminTeam'
-            - './crypto-config/peerOrganizations/Manufacturer.liquor.com/peers/peer0.Manufacturer.liquor.com/:/etc/hyperledger/crypto/peerManufacturer'
-#            - './orderer3.liquor.com:/var/hyperledger/production/orderer'
+            - './crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/:/etc/hyperledger/crypto/orderer'
+            - './crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/hyperledger/crypto/peerorg2'
+            - './crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/crypto/peerorg1'
+            - './orderer3.example.com:/var/hyperledger/production/orderer'
             
-    orderer4.liquor.com:
-        container_name: orderer4.liquor.com
-        image: 'hyperledger/fabric-orderer:1.4.3'
+    orderer4.example.com:
+        container_name: orderer4.example.com
+        image: 'hyperledger/fabric-orderer:1.4.4'
         environment:
             - ORDERER_GENERAL_LOGLEVEL=debug
             - FABRIC_LOGGING_SPEC=INFO
@@ -169,87 +169,140 @@ services:
             - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/etc/hyperledger/crypto/orderer/tls/server.crt
             - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/etc/hyperledger/crypto/orderer/tls/server.key
-            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerAdminTeam/tls/ca.crt, /etc/hyperledger/crypto/peerManufacturer/tls/ca.crt]
+            - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/crypto/orderer/tls/ca.crt, /etc/hyperledger/crypto/peerorg2/tls/ca.crt, /etc/hyperledger/crypto/peerorg1/tls/ca.crt]
         working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderers
         command: orderer
         ports:
             - '11050:7050'
         volumes:
             - '../artifacts:/etc/hyperledger/configtx'
-            - './crypto-config/ordererOrganizations/liquor.com/orderers/orderer4.liquor.com/:/etc/hyperledger/crypto/orderer'
-            - './crypto-config/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/:/etc/hyperledger/crypto/peerAdminTeam'
-            - './crypto-config/peerOrganizations/Manufacturer.liquor.com/peers/peer0.Manufacturer.liquor.com/:/etc/hyperledger/crypto/peerManufacturer'
+            - './crypto-config/ordererOrganizations/example.com/orderers/orderer4.example.com/:/etc/hyperledger/crypto/orderer'
+            - './crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/hyperledger/crypto/peerorg2'
+            - './crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/crypto/peerorg1'
             
-#            - './orderer4.liquor.com:/var/hyperledger/production/orderer'
+            - './orderer4.example.com:/var/hyperledger/production/orderer'
 
 
-    couchdb.peer0.AdminTeam:
-        container_name: couchdb.peer0.AdminTeam
-        image: 'hyperledger/fabric-couchdb:0.4.18'
-        environment:
-            - COUCHDB_USER=admin
-            - COUCHDB_PASSWORD=admin
-        ports:
-            - '13050:5984'
-    peer0.AdminTeam.liquor.com:
-        container_name: peer0.AdminTeam.liquor.com
+#    couchdb.peer0.org2:
+#        container_name: couchdb.peer0.org2
+#        image: 'hyperledger/fabric-couchdb:0.4.18'
+#        environment:
+#            - COUCHDB_USER=admin
+#            - COUCHDB_PASSWORD=admin
+#        ports:
+#            - '13050:5984'
+    peer0.org1.example.com:
+        container_name: peer0.org1.example.com
         extends:
             file: base.yaml
             service: peer-base
         environment:
-            - CORE_PEER_ID=peer0.AdminTeam.liquor.com
-            - CORE_PEER_LOCALMSPID=AdminTeamMSP
-            - CORE_PEER_ADDRESS=peer0.AdminTeam.liquor.com:7051
+            - CORE_PEER_ID=peer0.org1.example.com
+            - CORE_PEER_LOCALMSPID=Org1MSP
+            - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
             - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
             - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
-            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-            - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.AdminTeam:5984
-            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
-            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
-            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.AdminTeam.liquor.com:7051            
+#            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+#           - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.org2:5984
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
+            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051            
         ports:
             - '7051:7051'
             - '7053:7053'
         volumes:
-            - './crypto-config/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/:/etc/hyperledger/crypto/peer'
-#           - './peer0.AdminTeam.liquor.com:/var/hyperledger/production'
+            - './crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/crypto/peer'
+            - './peer0.org1.example.com:/var/hyperledger/production'
         depends_on:
-            - couchdb.peer0.AdminTeam
-            - orderer.liquor.com
-
-    couchdb.peer0.Manufacturer:
-        container_name: couchdb.peer0.Manufacturer
-        image: 'hyperledger/fabric-couchdb:0.4.18'
-        environment:
-            - COUCHDB_USER=admin
-            - COUCHDB_PASSWORD=admin
-        ports:
-            - '20050:5984'
-    peer0.Manufacturer.liquor.com:
-        container_name: peer0.Manufacturer.liquor.com
+            #- couchdb.peer0.org2
+            - orderer.example.com
+    
+    peer1.org1.example.com:
+        container_name: peer1.org1.example.com
         extends:
             file: base.yaml
             service: peer-base
         environment:
-            - CORE_PEER_ID=peer0.Manufacturer.liquor.com
-            - CORE_PEER_LOCALMSPID=ManufacturerMSP
-            - CORE_PEER_ADDRESS=peer0.Manufacturer.liquor.com:7056
-            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-            - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.Manufacturer:5984
-            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
-            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
-            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.Manufacturer.liquor.com:7056
-            - CORE_PEER_LISTENADDRESS=0.0.0.0:7056  
-            - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7057
+            - CORE_PEER_ID=peer1.org1.example.com
+            - CORE_PEER_LOCALMSPID=Org1MSP
+            - CORE_PEER_ADDRESS=peer1.org1.example.com:7056
+            - CORE_PEER_LISTENADDRESS=0.0.0.0:7056
+            - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
+#            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+#           - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.org2:5984
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
+            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.example.com:7056            
         ports:
             - '7056:7056'
+            - '7053:7053'
+        volumes:
+            - './crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/:/etc/hyperledger/crypto/peer'
+            - './peer1.org1.example.com:/var/hyperledger/production'
+        depends_on:
+            #- couchdb.peer0.org2
+            - orderer.example.com        
+   
+
+#    couchdb.peer0.org1:
+#        container_name: couchdb.peer0.org1
+#        image: 'hyperledger/fabric-couchdb:0.4.18'
+#        environment:
+#           - COUCHDB_USER=admin
+#            - COUCHDB_PASSWORD=admin
+#        ports:
+#            - '20050:5984'
+    peer0.org2.example.com:
+        container_name: peer0.org2.example.com
+        extends:
+            file: base.yaml
+            service: peer-base
+        environment:
+            - CORE_PEER_ID=peer0.org2.example.com
+            - CORE_PEER_LOCALMSPID=org2MSP
+            - CORE_PEER_ADDRESS=peer0.org2.example.com:9051
+#            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.org1:5984
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
+            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org2.example.com:9051
+            - CORE_PEER_LISTENADDRESS=0.0.0.0:9051  
+            - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7057
+        ports:
+            - '9051:9051'
             - '7058:7058'
         volumes:
-            - ./crypto-config/peerOrganizations/Manufacturer.liquor.com/peers/peer0.Manufacturer.liquor.com/:/etc/hyperledger/crypto/peer
-#            - './peer0.Manufacturer.liquor.com:/var/hyperledger/production'           
+            - ./crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/hyperledger/crypto/peer
+            - './peer0.org2.example.com:/var/hyperledger/production'           
         depends_on:
-            - couchdb.peer0.Manufacturer
-            - orderer.liquor.com
+            #- couchdb.peer0.org1
+            - orderer.example.com
+            
+    peer1.org2.example.com:
+        container_name: peer1.org2.example.com
+        extends:
+            file: base.yaml
+            service: peer-base
+        environment:
+            - CORE_PEER_ID=peer1.org2.example.com
+            - CORE_PEER_LOCALMSPID=org2MSP
+            - CORE_PEER_ADDRESS=peer1.org2.example.com:9056
+#            - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer0.org1:5984
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+#            - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=admin
+            - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org2.example.com:9056
+            - CORE_PEER_LISTENADDRESS=0.0.0.0:9056  
+            - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7057
+        ports:
+            - '9056:9056'
+            - '7058:7058'
+        volumes:
+            - ./crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/:/etc/hyperledger/crypto/peer
+            - './peer1.org2.example.com:/var/hyperledger/production'           
+        depends_on:
+            #- couchdb.peer0.org1
+            - orderer.example.com
 
     
     cli:
@@ -260,14 +313,14 @@ services:
             - GOPATH=/etc/hyperledger/fabric/peer
             - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
             - FABRIC_LOGGING_SPEC=INFO
-            - CORE_PEER_ID=peer0.AdminTeam.liquor.com
-            - CORE_PEER_LOCALMSPID=AdminTeamMSP
-            - CORE_PEER_ADDRESS=peer0.AdminTeam.liquor.com:7051
+            - CORE_PEER_ID=peer0.org1.example.com
+            - CORE_PEER_LOCALMSPID=org1MSP
+            - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
             - CORE_PEER_TLS_ENABLED=true
-            - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/tls/server.crt
-            - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/tls/server.key
-            - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/tls/ca.crt
-            - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/AdminTeam.liquor.com/users/Admin@AdminTeam.liquor.com/msp
+            - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/server.crt
+            - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/server.key
+            - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org2.example.com/tls/ca.crt
+            - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
         working_dir: /etc/hyperledger/fabric/peer
         command: /bin/bash
         volumes:
@@ -280,6 +333,6 @@ services:
         ports:
             - '9092'
         depends_on:
-            - orderer.liquor.com
-            - peer0.AdminTeam.liquor.com            
+            - orderer.example.com
+            - peer0.org1.example.com            
    

@@ -1,7 +1,7 @@
 --- 
 OrdererOrgs: 
   - 
-    Domain: liquor.com
+    Domain: example.com
     Name: Orderer
     Specs: 
       - 
@@ -15,10 +15,10 @@ PeerOrgs:
   - 
     CA: 
       Hostname: ca
-    Domain: Manufacturer.liquor.com
-    Name: Manufacturer
+    Domain: org1.example.com
+    Name: Org1
     Template: 
-      Count: 1
+      Count: 2
       SANS: 
         - localhost
     Users: 
@@ -26,10 +26,10 @@ PeerOrgs:
   - 
     CA: 
       Hostname: ca
-    Domain: AdminTeam.liquor.com
-    Name: AdminTeam
+    Domain: org2.example.com
+    Name: Org2
     Template: 
-      Count: 1
+      Count: 2
       SANS: 
         - localhost
     Users: 

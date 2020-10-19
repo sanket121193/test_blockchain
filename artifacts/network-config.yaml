@@ -4,7 +4,7 @@
 # blockchain network that are necessary for the applications to interact with it. These are all
 # knowledge that must be acquired from out-of-band sources. This file provides such a source.
 #
-name: "liquor-hyperledgerfabric-setup"
+name: "snapcert-hyperledgerfabric-setup"
 
 #
 # Any properties with an "x-" prefix will be treated as application-specific, exactly like how naming
@@ -19,7 +19,7 @@ x-type: "hlfv1"
 #
 # Describe what the target network is/does.
 #
-description: "liquor Network"
+description: "snapcert Network"
 
 #
 # Schema version of the content. Used by the SDK to apply the corresponding parsing rules.
@@ -38,21 +38,21 @@ version: "1.0"
 #
 channels:
   # name of the channel
-  liquorchannel:
+  mychannel:
     # Required. list of orderers designated by the application to use for transactions on this
     # channel. This list can be a result of access control ("org1" can only access "ordererA"), or
     # operational decisions to share loads from applications among the orderers.  The values must
     # be "names" of orgs defined under "organizations/peers"
     orderers:
-      - orderer.liquor.com
-      - orderer1.liquor.com
-      - orderer2.liquor.com
-      - orderer3.liquor.com
-      - orderer4.liquor.com
+      - orderer.example.com
+      - orderer1.example.com
+      - orderer2.example.com
+      - orderer3.example.com
+      - orderer4.example.com
 
     # Required. list of peers from participating orgs
     peers:
-      peer0.Manufacturer.liquor.com:
+      peer0.org1.example.com:
         # [Optional]. will this peer be sent transaction proposals for endorsement? The peer must
         # have the chaincode installed. The app can also use this property to decide which peers
         # to send the chaincode install request. Default: true
@@ -71,8 +71,21 @@ channels:
         # produce events but the app typically only needs to connect to one to listen to events.
         # Default: true
         eventSource: true
+        
+        
+      peer1.org1.example.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+        
+      peer0.org2.example.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true  
 
-      peer0.AdminTeam.liquor.com:
+      peer1.org2.example.com:
         endorsingPeer: true
         chaincodeQuery: true
         ledgerQuery: true
@@ -90,11 +103,12 @@ channels:
 # list of participating organizations in this network
 #
 organizations:
-  Manufacturer:
-    mspid: ManufacturerMSP
+  Org1:
+    mspid: Org1MSP
 
     peers:
-      - peer0.Manufacturer.liquor.com
+      - peer0.org1.example.com
+      - peer1.org1.example.com
 
     # [Optional]. Certificate Authorities issue certificates for identification purposes in a Fabric based
     # network. Typically certificates provisioning is done in a separate process outside of the
@@ -102,7 +116,7 @@ organizations:
     # dynamic certificate management (enroll, revoke, re-enroll). The following section is only for
     # Fabric-CA servers.
     certificateAuthorities:
-      - ca-Manufacturer
+      - ca-org1
 
     # [Optional]. If the application is going to make requests that are reserved to organization
     # administrators, including creating/updating channels, installing/instantiating chaincodes, it
@@ -112,27 +126,28 @@ organizations:
     # this way. The SDK should allow applications to set the org admin identity via APIs, and only use
     # this route as an alternative when it exists.
     adminPrivateKey:
-      path: artifacts/crypto-config/peerOrganizations/Manufacturer.liquor.com/users/Admin@Manufacturer.liquor.com/msp/keystore/9328b57acd53f95c9db09e2ea4ba9991b659a487d66ad2b30f59bcc5b733975d_sk
+      path: artifacts/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/9328b57acd53f95c9db09e2ea4ba9991b659a487d66ad2b30f59bcc5b733975d_sk
     signedCert:
-      path: artifacts/crypto-config/peerOrganizations/Manufacturer.liquor.com/users/Admin@Manufacturer.liquor.com/msp/signcerts/Admin@Manufacturer.liquor.com-cert.pem
+      path: artifacts/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem
 
   # the profile will contain public information about organizations other than the one it belongs to.
   # These are necessary information to make transaction lifecycles work, including MSP IDs and
   # peers with a public URL to send transaction proposals. The file will not contain private
   # information reserved for members of the organization, such as admin key and certificate,
   # fabric-ca registrar enroll ID and secret, etc.
-  AdminTeam:
-    mspid: AdminTeamMSP
+  Org2:
+    mspid: Org2MSP
     peers:
-      - peer0.AdminTeam.liquor.com
+      - peer0.org2.example.com
+      - peer1.org2.example.com
 
 
     certificateAuthorities:
-      - ca-AdminTeam
+      - ca-org2
     adminPrivateKey:
-      path: artifacts/crypto-config/peerOrganizations/AdminTeam.liquor.com/users/Admin@AdminTeam.liquor.com/msp/keystore/fbec321815df836b25c4c726a60348c0fcd04e54f1e89e33e1d32270cb58b4fd_sk
+      path: artifacts/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/fbec321815df836b25c4c726a60348c0fcd04e54f1e89e33e1d32270cb58b4fd_sk
     signedCert:
-      path: artifacts/crypto-config/peerOrganizations/AdminTeam.liquor.com/users/Admin@AdminTeam.liquor.com/msp/signcerts/Admin@AdminTeam.liquor.com-cert.pem
+      path: artifacts/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/Admin@org2.example.com-cert.pem
 
 
   
@@ -143,16 +158,16 @@ organizations:
 #
 
 orderers:
-  orderer.liquor.com:
+  orderer.example.com:
     url: grpcs://localhost:7050
 
     # these are standard properties defined by the gRPC library
     # they will be passed in as-is to gRPC client constructor
     grpcOptions:
-      ssl-target-name-override: orderer.liquor.com
+      ssl-target-name-override: orderer.example.com
 
     tlsCACerts:
-      path: artifacts/crypto-config/ordererOrganizations/liquor.com/orderers/orderer.liquor.com/tls/ca.crt
+      path: artifacts/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
 
   
 
@@ -163,26 +178,45 @@ orderers:
 peers:
 
  
-  peer0.AdminTeam.liquor.com:
+  peer0.org1.example.com:
     # this URL is used to send endorsement and query requests
     url: grpcs://localhost:7051
 
     grpcOptions:
-      ssl-target-name-override: peer0.AdminTeam.liquor.com
+      ssl-target-name-override: peer0.org1.example.com
     tlsCACerts:
-      path: artifacts/crypto-config/peerOrganizations/AdminTeam.liquor.com/peers/peer0.AdminTeam.liquor.com/tls/ca.crt
-    
-
-
-
-  peer0.Manufacturer.liquor.com:
+      path: artifacts/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+      
+      
+  peer1.org1.example.com:
     # this URL is used to send endorsement and query requests
     url: grpcs://localhost:7056
 
     grpcOptions:
-      ssl-target-name-override: peer0.Manufacturer.liquor.com
+      ssl-target-name-override: peer1.org1.example.com
     tlsCACerts:
-      path: artifacts/crypto-config/peerOrganizations/Manufacturer.liquor.com/peers/peer0.Manufacturer.liquor.com/tls/ca.crt
+      path: artifacts/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/ca.crt    
+      
+  peer0.org2.example.com:
+    # this URL is used to send endorsement and query requests
+    url: grpcs://localhost:9051
+
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.example.com
+    tlsCACerts:
+      path: artifacts/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt 
+    
+
+
+
+  peer1.org2.example.com:
+    # this URL is used to send endorsement and query requests
+    url: grpcs://localhost:9056
+
+    grpcOptions:
+      ssl-target-name-override: peer1.org2.example.com
+    tlsCACerts:
+      path: artifacts/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/ca.crt
 
 
 
@@ -197,28 +231,28 @@ peers:
 certificateAuthorities:
   
 
-  ca-AdminTeam:
+  ca-org2:
     url: https://localhost:7054
     httpOptions:
       verify: false
     tlsCACerts:
-      path: artifacts/crypto-config/peerOrganizations/AdminTeam.liquor.com/ca/ca.AdminTeam.liquor.com-cert.pem
+      path: artifacts/crypto-config/peerOrganizations/org2.example.com/ca/ca.org2.example.com-cert.pem
     registrar:
       - enrollId: admin
         enrollSecret: adminpw
     # [Optional] The optional name of the CA.
-    caName: ca-AdminTeam
+    caName: ca-org2
 
-  ca-Manufacturer:
+  ca-org1:
     url: https://localhost:7154
     httpOptions:
       verify: false
     tlsCACerts:
-      path: artifacts/crypto-config/peerOrganizations/Manufacturer.liquor.com/ca/ca.Manufacturer.liquor.com-cert.pem
+      path: artifacts/crypto-config/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem
     registrar:
       - enrollId: admin
         enrollSecret: adminpw
     # [Optional] The optional name of the CA.
-    caName: ca-Manufacturer
+    caName: ca-org1
 
  
